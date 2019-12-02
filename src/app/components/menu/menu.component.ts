@@ -23,9 +23,9 @@ export class MenuComponent {
   menus: Menu[] = [
     {name: '系统首页', link: '/manage', icon: 'fa-home', show: true},
     {
-      name: '福选订单', icon: 'fuxuan', show: true, childIsShow: false, child: [
-      {name: '福选订单', link: '/manage/order-list', show: true},
-      {name: '福选录单', link: '/manage/order-enter', show: true},
+      name: '列表', icon: 'fuxuan', show: true, childIsShow: false, child: [
+      {name: '用户列表', link: '/manage/order-list', show: true},
+      {name: '新增用户', link: '/manage/order-enter', show: true},
       ]
     },
     {
