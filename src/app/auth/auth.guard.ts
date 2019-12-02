@@ -8,7 +8,7 @@ import {
   CanLoad, Route
 } from '@angular/router';
 import { AuthService } from './auth.service';
-import { CacheService } from '../untils/cache.service';
+import { CacheService } from '../utils/cache.service';
 
 @Injectable({
   providedIn: 'root',

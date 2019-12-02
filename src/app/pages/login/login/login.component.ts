@@ -9,7 +9,7 @@ import * as rootReducer from 'src/app/ngrx/reducers/index';
 import { UserService } from 'src/app/services/user.service';
 import { format } from 'util';
 import { LoginService } from 'src/app/services/login.service';
-import { CacheService } from 'src/app/untils/cache.service';
+import { CacheService } from 'src/app/utils/cache.service';
 import * as dayjs from 'dayjs';
 import { LayerService } from 'src/app/services/layer.service';
 

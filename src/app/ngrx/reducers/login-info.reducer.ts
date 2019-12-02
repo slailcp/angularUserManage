@@ -1,6 +1,6 @@
 import { createReducer, on, createSelector, createFeatureSelector } from '@ngrx/store';
 import { getLoginInfo } from '../actions/login-info.action';
-import { CacheService } from 'src/app/untils/cache.service';
+import { CacheService } from 'src/app/utils/cache.service';
 
 const cacheService = new CacheService();
 export interface State {

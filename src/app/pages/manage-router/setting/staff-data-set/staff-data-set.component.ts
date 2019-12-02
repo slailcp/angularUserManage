@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CacheService } from 'src/app/untils/cache.service';
+import { CacheService } from 'src/app/utils/cache.service';
 import { Store } from '@ngrx/store';
 import { getLoginInfo } from 'src/app/ngrx/actions/login-info.action';
 import { UserService } from 'src/app/services/user.service';

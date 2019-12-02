@@ -3,7 +3,7 @@ import { Store,select } from '@ngrx/store';
 import * as rootReducer from 'src/app/ngrx/reducers/index';
 import * as loginInfoReducer from 'src/app/ngrx/reducers/login-info.reducer';
 import { Observable } from 'rxjs';
-import { CacheService } from 'src/app/untils/cache.service';
+import { CacheService } from 'src/app/utils/cache.service';
 import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router'
 import { LayerService } from 'src/app/services/layer.service';
