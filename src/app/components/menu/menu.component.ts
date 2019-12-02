@@ -3,12 +3,12 @@ import { Router } from '@angular/router';
 
 
 interface Menu{
-  name:string, 
+  name: string, 
   show: boolean,
   link?: string , 
   icon?: string, 
-  childIsShow?:boolean,
-  child?:Menu[]
+  childIsShow?: boolean,
+  child?: Menu[]
 }
 
 @Component({
@@ -18,9 +18,9 @@ interface Menu{
 })
 export class MenuComponent {
   constructor(
-    private router:Router
-  ){}
-  menus:Menu[] = [
+    private router: Router
+  ) {}
+  menus: Menu[] = [
     {name: '系统首页', link: '/manage', icon: 'fa-home', show: true},
     {
       name: '福选订单', icon: 'fuxuan', show: true, childIsShow: false, child: [
@@ -35,12 +35,12 @@ export class MenuComponent {
     }
   ];
 
-  showChildMenu(index){
-    if(this.menus[index].child){
+  showChildMenu(index) {
+    if (this.menus[index].child) {
       this.menus[index].childIsShow = !this.menus[index].childIsShow
     }
 
-    if(this.menus[index].link){
+    if (this.menus[index].link) {
       //  this.$router.push({path:this.menus[index].link})
       this.router.navigate([this.menus[index].link])
     }

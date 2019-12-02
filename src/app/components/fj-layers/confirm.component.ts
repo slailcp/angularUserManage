@@ -1,14 +1,14 @@
-import { Component, OnInit,Inject,Input ,Output,EventEmitter} from '@angular/core';
+import { Component, OnInit, Inject, Input, Output, EventEmitter} from '@angular/core';
 
 export interface ConfirmParams{
-    title?:string,
-    message:any,
-    btnCancelMessage?:string,
-    btnEnterMessage?:string,
-    width?:number|string,
-    enterCallback?:Function,
-    closeCallback?:Function,
-    completeCallback?:Function
+    title?: string,
+    message: any,
+    btnCancelMessage?: string,
+    btnEnterMessage?: string,
+    width?: number|string,
+    enterCallback?: Function,
+    closeCallback?: Function,
+    completeCallback?: Function
 }
 
 @Component({
@@ -40,12 +40,12 @@ h1 .c{float:right;font-size:32px;color:#999;cursor:pointer}
 })
 
 export class ConfirmComponent implements OnInit {
-  title:string = '提示';
-  message:any = '';
-  btnEnterMessage:string = '确定';
-  btnCancelMessage:string = '取消';
-  confirmStyle:any = {
-    width:'250px'
+  title: string = '提示';
+  message: any = '';
+  btnEnterMessage: string = '确定';
+  btnCancelMessage: string = '取消';
+  confirmStyle: any = {
+    width: '250px'
   }
   constructor() {
     
@@ -65,18 +65,18 @@ export class ConfirmComponent implements OnInit {
    enter = new EventEmitter();
 
   ngOnInit() {
-    // setTimeout(()=>{
+    // setTimeout(() => {
     //   console.log(this.params)
     // },1000)
-    if(typeof this.params === 'string'){ // 默认信息；
-      this.message =this.params;
-    }else{
-      this.title = this.params.title?this.params.title:'提示';
+    if (typeof this.params === 'string') { // 默认信息；
+      this.message = this.params;
+    } else {
+      this.title = this.params.title? this.params.title: '提示';
       this.message = this.params.message;
-      this.btnEnterMessage = this.params.btnEnterMessage?this.params.btnEnterMessage:'确定';
-      this.btnCancelMessage = this.params.btnCancelMessage?this.params.btnCancelMessage:'取消';
+      this.btnEnterMessage = this.params.btnEnterMessage? this.params.btnEnterMessage: '确定';
+      this.btnCancelMessage = this.params.btnCancelMessage? this.params.btnCancelMessage: '取消';
       this.confirmStyle = {
-        width:this.params.width?this.params.width+'px':'250px'
+        width: this.params.width? this.params.width+'px': '250px'
       }
     }
   }

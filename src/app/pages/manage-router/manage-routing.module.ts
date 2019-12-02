@@ -17,20 +17,20 @@ import { StaffDataSetComponent } from './setting/staff-data-set/staff-data-set.c
 
 const routes: Routes = [
   {
-    path:'',
-    component:ManageRouterComponent,
+    path: '',
+    component: ManageRouterComponent,
     canActivate: [AuthGuard],
-    children:[
+    children: [
       { 
         path: '',
         canActivateChild: [AuthGuard], // 进入所有子路由的之前都会被激活
         children: [
-          { path: '',component: IndexComponent},
-          { path: 'index',component: IndexComponent},
-          { path: 'order-list',component:OrderListComponent},
-          { path: 'order-detail/:id',component:OrderDetailComponent},
-          { path: 'order-enter',component:OrderEnterComponent},
-          { path: 'staff-set',component:StaffDataSetComponent},
+          { path: '', component: IndexComponent},
+          { path: 'index', component: IndexComponent},
+          { path: 'order-list', component: OrderListComponent},
+          { path: 'order-detail/:id', component: OrderDetailComponent},
+          { path: 'order-enter', component: OrderEnterComponent},
+          { path: 'staff-set', component: StaffDataSetComponent},
           // { path: 'name-editor', component: NameEditorComponent },
           // { path: 'product-list', component: ProductListComponent },
           // { path: 'product-list/:id', component: ProductDetailComponent },

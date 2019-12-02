@@ -3,7 +3,7 @@ import { Validator, AbstractControl, NG_VALIDATORS, ValidatorFn } from '@angular
  
 // 校验的方法
 // nameRe:传进来的正则
-// control:当前需要校验的control元素，例如<input appForbiddenName="bob" .../> 
+// control:当前需要校验的control元素，例如<input appForbiddenName='bob' .../> 
 // 校验结果：如果传入的是bob则校验通不过
 function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
     return (control: AbstractControl): {[key: string]: any} | null => {

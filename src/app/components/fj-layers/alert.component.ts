@@ -1,13 +1,13 @@
-import { Component, OnInit,Inject,Input ,Output,EventEmitter} from '@angular/core';
+import { Component, OnInit, Inject, Input, Output, EventEmitter} from '@angular/core';
 
 export interface AlertParams{
-    title?:string,
-    message:any,
-    btnMessage?:string,
-    width?:number|string,
-    enterCallback?:Function,
-    closeCallback?:Function,
-    completeCallback?:Function
+    title?: string,
+    message: any,
+    btnMessage?: string,
+    width?: number|string,
+    enterCallback?: Function,
+    closeCallback?: Function,
+    completeCallback?: Function
 }
 
 @Component({
@@ -75,11 +75,11 @@ h1 .c {
 })
 
 export class AlertComponent implements OnInit {
-  title:string = '提示';
-  message:any = '';
-  btnMessage:string = '确定';
-  alertStyle:any = {
-    width:'250px'
+  title: string = '提示';
+  message: any = '';
+  btnMessage: string = '确定';
+  alertStyle: any = {
+    width: '250px'
   }
   constructor() {
     
@@ -100,14 +100,14 @@ export class AlertComponent implements OnInit {
 
   ngOnInit() {
 
-    if(typeof this.params === 'string'){ // 默认信息；
-      this.message =this.params;
-    }else{
-      this.title = this.params.title?this.params.title:'提示';
+    if (typeof this.params === 'string') { // 默认信息；
+      this.message = this.params;
+    } else {
+      this.title = this.params.title ? this.params.title: '提示';
       this.message = this.params.message;
-      this.btnMessage = this.params.btnMessage?this.params.btnMessage:'确定';
+      this.btnMessage = this.params.btnMessage ? this.params.btnMessage: '确定';
       this.alertStyle = {
-        width:this.params.width?this.params.width+'px':'250px'
+        width: this.params.width?this.params.width+'px': '250px'
       }
     }
    

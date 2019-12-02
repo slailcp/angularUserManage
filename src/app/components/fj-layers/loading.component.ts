@@ -1,4 +1,4 @@
-import { Component, OnInit, Input,EventEmitter, Output, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-loading',

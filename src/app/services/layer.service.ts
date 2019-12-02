@@ -11,14 +11,14 @@ import { LoadingComponent } from '../components/fj-layers/loading.component';
   providedIn: 'root'
 })
 export class LayerService{
-  constructor(){
+  constructor() {
 
 	}
  
 
     
-  // this.layerService.confirm('string').then((v)=>{
-  //   if(v){console.log('确定')}else{console.log('取消')}
+  // this.layerService.confirm('string').then((v) => {
+  //   if (v) {console.log('确定')} else {console.log('取消')}
   // })
 
     // this.layerService.confirm({
@@ -30,21 +30,21 @@ export class LayerService{
     //   closeCallback?:Function, // 关闭
     //   completeCallback?:Function // 不管是点击了点击确定或者取消，都会执行此方法
     // })
-  confirm(opt:string|ConfirmParams){
+  confirm(opt: string | ConfirmParams) {
     const confirmEle: NgElement & WithProperties<ConfirmComponent> = document.createElement('confirm-element') as any;
-    if(typeof opt === 'string'){
+    if (typeof opt === 'string') {
       confirmEle.params = {
-       message:opt
+       message: opt
      };
-    //  confirmEle.addEventListener('closed', ()=>document.body.removeChild(confirmEle))
-    //  confirmEle.addEventListener('enter', ()=>document.body.removeChild(confirmEle))
+    //  confirmEle.addEventListener('closed', () => document.body.removeChild(confirmEle))
+    //  confirmEle.addEventListener('enter', () => document.body.removeChild(confirmEle))
      document.body.appendChild(confirmEle);
-     return new Promise((resolve,reject)=>{
-      confirmEle.addEventListener('enter', ()=>{
+     return new Promise((resolve, reject) => {
+      confirmEle.addEventListener('enter', () => {
         document.body.removeChild(confirmEle);
         resolve(true);
       })
-      confirmEle.addEventListener('closed', ()=>{
+      confirmEle.addEventListener('closed', () => {
         document.body.removeChild(confirmEle);
         resolve(false);
       })
@@ -53,32 +53,32 @@ export class LayerService{
 
     confirmEle.params = opt;
     confirmEle.addEventListener('closed', (event) => {
-      if(opt.closeCallback){
+      if (opt.closeCallback) {
        const index = opt.closeCallback();
-       if(index === undefined){
+       if (index === undefined) {
          document.body.removeChild(confirmEle);
          return;
-       }else{
+       } else {
          console.log('关不掉哦')
        }
-      }else{
+      } else {
        document.body.removeChild(confirmEle);
       }
-      if(opt.completeCallback){opt.completeCallback()}
+      if (opt.completeCallback) {opt.completeCallback()}
     });
     confirmEle.addEventListener('enter', (event) => {
-     if(opt.enterCallback){
+     if (opt.enterCallback) {
        const index = opt.enterCallback();
-       if(index === undefined){
+       if (index === undefined) {
          document.body.removeChild(confirmEle);
          return;
-       }else{
+       } else {
          console.log('关不掉哦')
        }
-      }else{
+      } else {
        document.body.removeChild(confirmEle);
       }
-      if(opt.completeCallback){opt.completeCallback()}
+      if (opt.completeCallback) {opt.completeCallback()}
     });
     
     document.body.appendChild(confirmEle);
@@ -96,46 +96,46 @@ export class LayerService{
     //   completeCallback?:Function // 不管是点击了点击确定或者取消，都会执行此方法
     // })
 
- alert(opt:string|AlertParams){
+ alert(opt: string | AlertParams) {
      const alertEle: NgElement & WithProperties<AlertComponent> = document.createElement('alert-element') as any;
-     if(typeof opt === 'string'){
+     if (typeof opt === 'string') {
       alertEle.params = {
-        message:opt
+        message: opt
       };
-      alertEle.addEventListener('closed', ()=>document.body.removeChild(alertEle))
-      alertEle.addEventListener('enter', ()=>document.body.removeChild(alertEle))
+      alertEle.addEventListener('closed', () => document.body.removeChild(alertEle))
+      alertEle.addEventListener('enter', () => document.body.removeChild(alertEle))
       document.body.appendChild(alertEle);
        return;
      }
 
      alertEle.params = opt;
      alertEle.addEventListener('closed', (event) => {
-       if(opt.closeCallback){
+       if (opt.closeCallback) {
         const index = opt.closeCallback();
-        if(index === undefined){
+        if (index === undefined) {
           document.body.removeChild(alertEle);
           return;
-        }else{
+        } else {
           console.log('关不掉哦')
         }
-       }else{
+       } else {
         document.body.removeChild(alertEle);
        }
-       if(opt.completeCallback){opt.completeCallback()}
+       if (opt.completeCallback) {opt.completeCallback()}
      });
      alertEle.addEventListener('enter', (event) => {
-      if(opt.enterCallback){
+      if (opt.enterCallback) {
         const index = opt.enterCallback();
-        if(index === undefined){
+        if (index === undefined) {
           document.body.removeChild(alertEle);
           return;
-        }else{
+        } else {
           console.log('关不掉哦')
         }
-       }else{
+       } else {
         document.body.removeChild(alertEle);
        }
-       if(opt.completeCallback){opt.completeCallback()}
+       if (opt.completeCallback) {opt.completeCallback()}
      });
      
      document.body.appendChild(alertEle);
@@ -144,28 +144,28 @@ export class LayerService{
 
 
 
-  showToast(msg:string,time?:number){
+  showToast(msg: string, time?: number) {
     const toastEle: NgElement & WithProperties<ToastComponent> = document.createElement('toast-element') as any;
     toastEle.message = msg;
     document.body.appendChild(toastEle);
-    setTimeout(()=>{
+    setTimeout(() => {
       this.hideToast(toastEle);
-    },time*1000?time*1000:3000)
+    },time*1000? time*1000: 3000)
     return toastEle;
   }
 
-  hideToast(toastEle?:(NgElement & WithProperties<ToastComponent>) | string){
+  hideToast(toastEle?: (NgElement & WithProperties<ToastComponent>) | string) {
     // 删除所有
-    if(typeof toastEle === 'string' || !toastEle){
+    if (typeof toastEle === 'string' || !toastEle) {
       const eles = document.querySelectorAll('toast-element');
-      if(eles.length){eles.forEach(ele =>document.body.removeChild(ele));}
+      if (eles.length) {eles.forEach(ele =>document.body.removeChild(ele));}
       return;
     }
 
     // 删除指定的某一个
     const eles = document.querySelectorAll('toast-element');
-    if(eles.length){
-      eles.forEach(ele =>{
+    if (eles.length) {
+      eles.forEach(ele => {
         ele === toastEle?document.body.removeChild(ele):''
       });
     } 
@@ -174,7 +174,7 @@ export class LayerService{
 
 
 
-  showLoading(){
+  showLoading() {
     const loadEle: NgElement & WithProperties<LoadingComponent> = document.createElement('loading-element') as any;
     // loadEle.id = `${parseInt(`${Math.random()*10000}`)}`
     // console.log(loadEle.id)
@@ -182,16 +182,16 @@ export class LayerService{
     return loadEle;
   }
 
-  hideLoading(loadEle?:(NgElement & WithProperties<LoadingComponent>) | string){ // loadEle:打开的那个load,'all':所有,不传参数的时候代表关闭所有
-    if(typeof loadEle === 'string' || !loadEle){
+  hideLoading(loadEle?: (NgElement & WithProperties<LoadingComponent>) | string) { // loadEle:打开的那个load,'all':所有,不传参数的时候代表关闭所有
+    if (typeof loadEle === 'string' || !loadEle) {
       const eles = document.querySelectorAll('loading-element');
-      if(eles.length){eles.forEach(ele =>document.body.removeChild(ele));}
+      if (eles.length) {eles.forEach(ele =>document.body.removeChild(ele));}
       return;
     }
 
     // const eles = document.querySelectorAll('loading-element');
-    // if(eles.length){
-    //   eles.forEach(ele =>{
+    // if (eles.length) {
+    //   eles.forEach(ele => {
     //     ele === loadEle?document.body.removeChild(ele):''
     //   });
     // } 

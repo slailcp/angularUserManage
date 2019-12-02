@@ -1,15 +1,15 @@
-import { createReducer, on, createSelector,createFeatureSelector } from '@ngrx/store';
+import { createReducer, on, createSelector, createFeatureSelector } from '@ngrx/store';
 import { getLoginInfo } from '../actions/login-info.action';
 import { CacheService } from 'src/app/untils/cache.service';
 
 const cacheService = new CacheService();
 export interface State {
-    userid:number,
-    username:string,
-    like:string,
-    age:number,
-    sex:string,
-    description:string
+    userid: number,
+    username: string,
+    like: string,
+    age: number,
+    sex: string,
+    description: string
 }
 
 CacheService

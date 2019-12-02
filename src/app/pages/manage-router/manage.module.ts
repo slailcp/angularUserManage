@@ -58,6 +58,6 @@ import { SexPipe } from 'src/app/pipes/sex.pipe';
     ManageRoutingModule,
     FormsModule
   ],
-  exports:[HighlightDirective,FjAutocompleteDirective,SexPipe] 
+  exports: [HighlightDirective, FjAutocompleteDirective, SexPipe] 
 })
 export class ManageModule { }

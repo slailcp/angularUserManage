@@ -1,4 +1,4 @@
-import { Component, Injector, OnDestroy,OnInit } from '@angular/core';
+import { Component, Injector, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { from } from 'rxjs';
 import * as rootReducer from 'src/app/ngrx/reducers/index';
@@ -19,40 +19,38 @@ import { ConfirmComponent } from './components/fj-layers/confirm.component';
 export class AppComponent implements OnInit {
   title = 'demo';
   constructor(
-    injector: Injector, 
-    private store:Store<rootReducer.State>
-    ){
+    injector: Injector,
+    private store: Store<rootReducer.State>
+    ) {
       const LoadElement = createCustomElement(LoadingComponent, {injector});
       customElements.define('loading-element', LoadElement);
-  
+
       const TipElement = createCustomElement(ToastComponent, {injector});
       customElements.define('toast-element', TipElement);
-  
+
       const AlertElement = createCustomElement(AlertComponent, {injector});
       customElements.define('alert-element', AlertElement);
-  
+
       const ConfirmElement = createCustomElement(ConfirmComponent, {injector});
       customElements.define('confirm-element', ConfirmElement);
 
-      this.store.subscribe(item =>{
-      console.log(item)
-    })
+      this.store.subscribe(item => {
+        console.log(item);
+      });
   }
 
-  ngOnInit(){
-     //在页面加载时读取sessionStorage里的状态信息
-    // if (sessionStorage.getItem("store") ) {
-    //   // this.store.dispatch(resetState({payload:JSON.parse(sessionStorage.getItem("store"))}))
-    //   // this.$store.replaceState(Object.assign({}, this.$store.state,JSON.parse(sessionStorage.getItem("store"))))
+  ngOnInit() {
+     // 在页面加载时读取sessionStorage里的状态信息
+    // if (sessionStorage.getItem('store') ) {
+    //   // this.store.dispatch(resetState({payload:JSON.parse(sessionStorage.getItem('store'))}))
+    //   // this.$store.replaceState(Object.assign({}, this.$store.state,JSON.parse(sessionStorage.getItem('store'))))
     // }
     // //在页面刷新时将vuex里的信息保存到sessionStorage里
-    // window.addEventListener("beforeunload",()=>{
-    //   this.store.subscribe(item =>{
+    // window.addEventListener('beforeunload', () => {
+    //   this.store.subscribe(item => {
     //     console.log(item)
-    //     sessionStorage.setItem("store",JSON.stringify(item))
+    //     sessionStorage.setItem('store', JSON.stringify(item))
     //   })
     // })
   }
-  
-
 }

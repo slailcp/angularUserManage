@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 /** Pass untouched request through to the next request handler. */
 @Injectable()
 export class GlobalInterceptor implements HttpInterceptor {
-    constructor(){}
+    constructor() {}
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // req.element = this.loading.showLoading();
     // req.clone({ element: 'a' })

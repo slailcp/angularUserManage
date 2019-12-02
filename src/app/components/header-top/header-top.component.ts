@@ -16,15 +16,15 @@ import { LayerService } from 'src/app/services/layer.service';
 })
 export class HeaderTopComponent {
   loginInfo$: Observable<loginInfoReducer.State>
-  username$:Observable<string>
-  description$:Observable<string>
-  userInfo:any
-  constructor(private store:Store<rootReducer.State>,
-    private cacheService:CacheService,
-    private loginService:LoginService,
-    private router:Router,
-    private layerService:LayerService
-    ){
+  username$: Observable<string>
+  description$: Observable<string>
+  userInfo: any
+  constructor(private store: Store<rootReducer.State>,
+    private cacheService: CacheService,
+    private loginService: LoginService,
+    private router: Router,
+    private layerService: LayerService
+    ) {
     // 获取所有登陆信息
     this.loginInfo$ = store.pipe(select('loginInfo'));
     // this.loginInfo$.subscribe(item =>console.log(item))
@@ -37,16 +37,16 @@ export class HeaderTopComponent {
 
   }
 
-  onLoginOut(){
-      this.layerService.confirm('是否退出').then((v)=>{
-        if(v){
+  onLoginOut() {
+      this.layerService.confirm('是否退出').then((v) => {
+        if (v) {
           const loading = this.layerService.showLoading()
-          setTimeout(()=>{
+          setTimeout(() => {
             this.cacheService.clear();
             this.router.navigate(['/login']);
             this.layerService.hideLoading(loading);
-          },1000)
-        }else{
+          }, 1000)
+        } else {
           console.log('不推出！')
         }
       })

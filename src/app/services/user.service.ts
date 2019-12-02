@@ -6,7 +6,7 @@ import { finalize } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LayerService } from './layer.service';
 import { UserInfo } from '../interfacer/user';
-interface loginUser {username:string,password:string}
+interface loginUser {username:string,password: string}
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -15,25 +15,25 @@ const httpOptions = {
     })
 };
   const  _params:UserInfo = {
-    "id": "",
-    "AccountData": "",
-    "username": "",
-    "password": "888888",
-    "MobilePhone": "",
-    "age": 0,
-    "self": false,
-    "like":"",
-    "sex":0,
-    "identity":"",
-    "codetype":"",
-    "codenumber":""
+    'id': '',
+    'AccountData': '',
+    'username': '',
+    'password': '888888',
+    'MobilePhone': '',
+    'age': 0,
+    'self': false,
+    'like': '',
+    'sex': 0,
+    'identity': '',
+    'codetype': '',
+    'codenumber': ''
 }
 
 @Injectable({
     providedIn: 'root'
 })
 export class UserService {
-    constructor(private http:HttpClient,private layerService:LayerService){
+    constructor(private http:HttpClient, private layerService:LayerService) {
 
     }
     login(): Observable<loginUser[]> {
@@ -41,7 +41,7 @@ export class UserService {
         return this.http.get<loginUser[]>(url);
      } 
  
-     getUsers(params?:any): Observable<UserInfo[]> {
+     getUsers(params?: any): Observable<UserInfo[]> {
          const loading = this.layerService.showLoading();
         const url = params&&params.username?`http://localhost:3000/info/?username=${params.username}`:'http://localhost:3000/info';
         return this.http.get<any[]>(url).pipe(
@@ -51,7 +51,7 @@ export class UserService {
               })
         );
      } 
-     getUser(id:any): Observable<UserInfo[]> {
+     getUser(id: any): Observable<UserInfo[]> {
         const loading = this.layerService.showLoading();
        const url = `http://localhost:3000/info/?id=${id}`;
        return this.http.get<any[]>(url).pipe(
@@ -62,11 +62,11 @@ export class UserService {
        );
     } 
 
-    editUser(params:any): Observable<UserInfo[]> {
+    editUser(params: any): Observable<UserInfo[]> {
         const loading = this.layerService.showLoading();
         const url = `http://localhost:3000/info/${params.id}`;
         params = {..._params,...params};
-        return this.http.put<any[]>(url,params,httpOptions).pipe(
+        return this.http.put<any[]>(url, params, httpOptions).pipe(
             finalize(() => {
                 this.layerService.hideLoading(loading);
               })
@@ -76,11 +76,11 @@ export class UserService {
      addUser(params): Observable<UserInfo[]> {
         const loading = this.layerService.showLoading();
         const url = `http://localhost:3000/info`;
-        params = {..._params,...params};
+        params = {..._params, ...params};
         const id = `${parseInt(`${Math.random()*100000000000000000}`)}`;
         params.id = id
         httpOptions.headers = httpOptions.headers.set('Authorization', 'my-new-auth-token');
-        return this.http.post<any[]>(url,params,httpOptions).pipe(
+        return this.http.post<any[]>(url, params, httpOptions).pipe(
             finalize(() => {
                 this.layerService.hideLoading(loading);
               })
@@ -90,7 +90,7 @@ export class UserService {
         const loading = this.layerService.showLoading();
         const url = `http://localhost:3000/info/${id}`;
         
-        return this.http.delete<any[]>(url,httpOptions).pipe(
+        return this.http.delete<any[]>(url, httpOptions).pipe(
             finalize(() => {
                 this.layerService.hideLoading(loading);
               })

@@ -1,19 +1,19 @@
-import { createReducer, on, createSelector,createFeatureSelector } from '@ngrx/store';
+import { createReducer, on, createSelector, createFeatureSelector } from '@ngrx/store';
 import { getLoginInfo } from '../actions/login-info.action';
 
 export interface State {
-    userid:number,
-    username:string,
-    password:string,
-    like:string,
-    age:number,
-    sex:string,
-    department:string,
-    MobilePhone:string,
-    codetype:string,
-    codenumber:string,
-    AccountData:string,
-    self:boolean
+    userid: number,
+    username: string,
+    password: string,
+    like: string,
+    age: number,
+    sex: string,
+    department: string,
+    MobilePhone: string,
+    codetype: string,
+    codenumber: string,
+    AccountData: string,
+    self: boolean
 };
 
 // 初始值

@@ -1,4 +1,4 @@
-import { Component, OnInit,Inject,Input } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
 
 @Component({
   selector: 'app-toast',

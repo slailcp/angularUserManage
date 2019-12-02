@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output,EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 @Component({
   selector: 'app-autocomplete',
   template: `
@@ -23,12 +23,12 @@ import {Component, OnInit, Input, Output,EventEmitter} from '@angular/core';
   ]
 })
 export class AutocompleteComponent implements OnInit {
-  autoIsShow:boolean = false;
-  listStyle:{width?:string,top?:string,left?:string,'pointer-events'?:string} = {
-    width:'0px',
-    top:'0px',
-    left:'0px',
-    'pointer-events':'auto'
+  autoIsShow: boolean = false;
+  listStyle: {width?: string, top?: string, left?: string, 'pointer-events'?: string} = {
+    width: '0px',
+    top: '0px',
+    left: '0px',
+    'pointer-events': 'auto'
   }
   @Input() Dom;
   @Input() Dom2;
@@ -38,19 +38,19 @@ export class AutocompleteComponent implements OnInit {
 
   ngOnInit() {
    
-    this.Dom.el.nativeElement.onfocus = ()=>{
+    this.Dom.el.nativeElement.onfocus = () => {
       this.autoIsShow = true;
       const getPos = this.getPos()
       this.listStyle = {
-        'width':`${getPos.width}px`,
-        'left':`${getPos.left}px`,
-        'top':`${getPos.top+getPos.height}px`,
+        'width': `${getPos.width}px`,
+        'left': `${getPos.left}px`,
+        'top': `${getPos.top+getPos.height}px`,
         'pointer-events': 'auto'
       }
       console.log(this.autoIsShow)
     }
    
-    document.addEventListener('click',()=>{
+    document.addEventListener('click', () => {
       this.autoIsShow = false;
     })
     
@@ -61,7 +61,7 @@ export class AutocompleteComponent implements OnInit {
   }
 
   /**点击内部的item,关闭auto */
-  selected(event){
+  selected(event) {
     this.autoIsShow = false;
     this.itemSelected.emit(event);
   }
@@ -81,8 +81,8 @@ export class AutocompleteComponent implements OnInit {
       right: pos.right + scrollx, 
       bottom: pos.bottom + scrollt, 
       left: pos.left + scrollx,
-      width:pos.width, 
-      height:pos.height
+      width: pos.width, 
+      height: pos.height
     }
   }
 

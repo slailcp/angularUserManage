@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule,HttpClientXsrfModule }    from '@angular/common/http';
+import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
-import { AppRoutingModule } from './app-routing.module'
+import { AppRoutingModule } from './app-routing.module';
 
 import { LoginComponent } from './pages/login/login/login.component';
 import { RegisterComponent } from './pages/login/register/register.component';
@@ -33,8 +33,7 @@ import { AutocompleteComponent } from './components/fj-layers/autocomplete.compo
     LoadingComponent,
     ToastComponent,
     AlertComponent,
-    ConfirmComponent,
-    
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +61,6 @@ import { AutocompleteComponent } from './components/fj-layers/autocomplete.compo
     AlertComponent,
     ConfirmComponent
   ],
-  exports:[]
+  exports: []
 })
 export class AppModule { }

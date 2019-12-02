@@ -25,7 +25,7 @@
 
 // export const selectCountInfo = (state: State) => state.countInfo;
 
-// export const selectFeatureCount = ()=> createSelector(
+// export const selectFeatureCount = () =>  createSelector(
 //     selectCountInfo,
 //   (state: counterReducer.State) => state.count
 // );
@@ -33,7 +33,7 @@
 
 // export const selectFeature = createFeatureSelector<State, loginReducer.State>('userInfo');
  
-// export const selectFeatureCounts = ()=> createSelector(
+// export const selectFeatureCounts = () =>  createSelector(
 //   selectFeature,
 //   (state: loginReducer.State) => state.user
 // );
