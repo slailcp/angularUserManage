@@ -1,41 +1,44 @@
-<h2>更新当前账号信息</h2>
+<div class="wraper">
+    <h2>更新当前账号信息</h2>
 
-<form (ngSubmit)="onSubmit(heroForm)" #heroForm="ngForm" *ngIf="user">
-    <div class="gropu">姓名:<input type="text" [(ngModel)]='user.username' #username="ngModel" appForbiddenName='武则天' name="username" placeholder="请输入姓名" autocomplete="off" required/></div>
-    <div [hidden]="username.valid || username.pristine">
-        <span *ngIf="!username.value"> *姓名为必填项</span>
-        <span *ngIf="username.errors?.forbiddenName">*名字不可以为武则天哦</span>
-    </div> 
-    
-    <!--这里，创建了名叫 username 的变量，并且赋值为 "ngModel"。
-  为什么是 “ngModel”？ 指令的 exportAs 属性告诉 Angular 如何链接模板引用变量到指令。 
-  这里把 name 设置为 ngModel 是因为 ngModel 指令的 exportAs 属性设置成了 “ngModel”。
-  -->
+    <form (ngSubmit)="onSubmit(heroForm)" #heroForm="ngForm" *ngIf="user">
+        <div class="gropu">姓名:<input type="text" class="text-default" [(ngModel)]='user.username' #username="ngModel" appForbiddenName='武则天' name="username" placeholder="请输入姓名" autocomplete="off" required/></div>
+        <div [hidden]="username.valid || username.pristine">
+            <span *ngIf="!username.value"> *姓名为必填项</span>
+            <span *ngIf="username.errors?.forbiddenName">*名字不可以为武则天哦</span>
+        </div> 
+        
+        <!--这里，创建了名叫 username 的变量，并且赋值为 "ngModel"。
+        为什么是 “ngModel”？ 指令的 exportAs 属性告诉 Angular 如何链接模板引用变量到指令。 
+        这里把 name 设置为 ngModel 是因为 ngModel 指令的 exportAs 属性设置成了 “ngModel”。
+        -->
 
-    <div class="gropu">年龄:<input type="text" [(ngModel)]='user.age' #age="ngModel" name="age" placeholder="请输入年龄" autocomplete="off" required/></div>
-    <div [hidden]="age.valid || age.pristine">*年龄为必填项</div> 
+        <div class="gropu">年龄:<input type="text" class="text-default" [(ngModel)]='user.age' #age="ngModel" name="age" placeholder="请输入年龄" autocomplete="off" required/></div>
+        <div [hidden]="age.valid || age.pristine">*年龄为必填项</div> 
 
-    <div class="gropu">性别:
-        <label><input type="radio" [(ngModel)]="user.sex" name="sex" value="0"/>男</label>
-        <label><input type="radio" [(ngModel)]="user.sex" name="sex" value="1"/>女</label>
-    </div>
+        <div class="gropu">性别:
+            <label><input type="radio" [(ngModel)]="user.sex" name="sex" value="0"/>男</label>
+            <label><input type="radio" [(ngModel)]="user.sex" name="sex" value="1"/>女</label>
+        </div>
 
-    <div class="gropu">手机:<input type="text" [(ngModel)]='user.MobilePhone' name="MobilePhone" placeholder="请输入手机号码" autocomplete="off"/></div>
-    <div class="gropu">身份:<input type="text" [(ngModel)]='user.identity' name="identity" placeholder="请输入身份" autocomplete="off"/></div>
-    <div class="gropu">
-        喜好:
-        <textarea [(ngModel)]='user.like' name="like" placeholder="请输入爱好"></textarea>
-    </div>
-    <div class="gropu">
-        证件类型:
-        <select [(ngModel)]="user.codetype" name="codetype" #like="ngModel" required>
-            <option value="">请选择</option>
-            <option *ngFor="let type of codetype" [value]="type.codeContent">{{type.codeContent}}</option>
-        </select>
-        <input type="text" [(ngModel)]='user.codenumber' name="codenumber" placeholder="请输入证件号码" autocomplete="off"/>
-    </div>
-    <input type="submit" value="update"/>
-</form>
+        <div class="gropu">手机:<input type="text" class="text-default" [(ngModel)]='user.MobilePhone' name="MobilePhone" placeholder="请输入手机号码" autocomplete="off"/></div>
+        <div class="gropu">身份:<input type="text" class="text-default" [(ngModel)]='user.identity' name="identity" placeholder="请输入身份" autocomplete="off"/></div>
+        <div class="gropu">
+            喜好:
+            <textarea class="text-default" [(ngModel)]='user.like' name="like" placeholder="请输入爱好"></textarea>
+        </div>
+        <div class="gropu">
+            证件类型:
+            <select class="text-default" [(ngModel)]="user.codetype" name="codetype" #like="ngModel" required>
+                <option value="">请选择</option>
+                <option *ngFor="let type of codetype" [value]="type.codeContent">{{type.codeContent}}</option>
+            </select>
+            <input type="text" class="text-default" [(ngModel)]='user.codenumber' name="codenumber" placeholder="请输入证件号码" autocomplete="off"/>
+        </div>
+        <input class="btn-default" type="submit" value="update"/>
+    </form>
+</div>
+
 
 
     

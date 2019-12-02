@@ -21,8 +21,8 @@ import { LayerService } from 'src/app/services/layer.service';
 })
 
 export class LoginComponent implements OnInit {
-    username: string = '';
-    password: string = '';
+    username: string = '小乔';
+    password: string = 'diaochan';
     constructor(
         private store: Store<rootReducer.State>,
         private router: Router,

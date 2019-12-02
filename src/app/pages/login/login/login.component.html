@@ -4,7 +4,14 @@
 <p>Super power boost: {{2 | exponentialStrength: 10}}</p> -->
 <!-- <button (click)="getInfo()">获取登陆信息</button> -->
 
-姓名：<input type="text" [(ngModel)]="username"/><br/>
-密码：<input type="text" [(ngModel)]="password"/><br/>
-<!-- <button (click)="onSubmitFx()">fx登陆</button> -->
-<button (click)="onSubmitMock()">模拟登陆</button>
+<div class="login-wraper">
+    <h1 class="h1">登陆</h1>
+    <div style="margin-top: 15px;">
+        姓名：<input class="text-default" type="text" [(ngModel)]="username"/><br/>
+    </div>
+    <div style="margin-top: 15px;">
+        密码：<input class="text-default" type="password" [(ngModel)]="password"/><br/>
+    </div>
+    <!-- <button (click)="onSubmitFx()">fx登陆</button> -->
+    <button class="btn-default" (click)="onSubmitMock()">模拟登陆</button>
+</div>
