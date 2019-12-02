@@ -1,0 +1,40 @@
+<button (click)="onToast()">toast</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button (click)="onLoading()">loading</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button (click)="onAlert()">alert</button>&nbsp;&nbsp;&nbsp;&nbsp;　　
+<button (click)="onConfirm()">confirm</button>&nbsp;&nbsp;&nbsp;&nbsp;　　<br/><br/><br/><br/>
+
+
+autocomplete:<input 
+    type="text" 
+    placeholder="请输入关键字查询"
+    #searchDepartmentName 
+    [value]="autoCompleteModel"
+    (input)="searchName(searchDepartmentName.value)" 
+    [appFjAutocomplete]="'auto'"  
+    #departmentName="app-fj"/>
+<app-autocomplete [Dom]="departmentName"  (itemSelected)="onAutoComplete($event)">
+  <div [attr.key]='filter.key'  class="sll-auto-component-item" *ngFor="let filter of filteredStates">
+    {{filter.value}}
+   </div>
+</app-autocomplete><br/>
+
+<!-- autocomplete:<input 
+    type="text" 
+    placeholder="请输入关键字查询"
+    #searchUserName 
+    [value]="autoCompleteModel"
+    (input)="searchNameajax(searchUserName.value)" 
+    [appFjAutocomplete]="'auto'"  
+    #userName="app-fj"/>
+<app-autocomplete [Dom]="userName" (itemSelected)="onAutoComplete($event)">
+  <div *ngIf="!filteredUserName$">loading...</div>
+  <div *ngIf="filteredUserName$">
+    <div [attr.key]='filter.userid'  class="sll-auto-component-item" *ngFor="let filter of (filteredUserName$|async)">
+    {{filter.username}}
+    </div>
+  </div>
+</app-autocomplete> -->
+
+
+
+

@@ -1,0 +1,41 @@
+<!-- <div class="menu">
+    <div class="logo">LOGO</div>
+    <div>
+        <div class="menu-item">
+            <a routerLink="/manage/index" routerLinkActive="active">首页</a>
+        </div>
+        <div class="menu-item">
+            <div>订单</div>
+            <div class="menu-item-item">
+                <a routerLink="/manage/order-list" routerLinkActive="active">订单列表</a>
+            </div>
+        </div>
+
+    </div>
+</div> -->
+
+
+<div class="v-menu">
+    <div *ngIf="menus" style="position: relative;z-index: 1;">
+      <div class="menus" *ngFor="let menu of menus;let index=index" [hidden]="!menu.show">
+        
+        <div *ngIf="!menu.link" class="parent" (click)="showChildMenu(index)"><i class="menu-icon fa" [class]="menu.icon"></i>
+          {{menu.name}}
+            <span class="arrow" *ngIf="menu.child">
+             <span class="el-icon-arrow-right" *ngIf="!menu.childIsShow"></span>
+             <span class="el-icon-arrow-down" *ngIf="menu.childIsShow"></span>
+            </span>
+        </div>
+        <div *ngIf="menu.link" class="parent" [routerLink]="menu.link" routerLinkActive="active">
+            <i class="menu-icon fa" [class]="menu.icon"></i>{{menu.name}}
+        </div>
+        <div class="box-wraper" *ngIf="menu.child && menu.childIsShow">
+            <div class="child" *ngFor=" let item of menu.child" [routerLink]="item.link" routerLinkActive="active">{{item.name}}</div>
+        </div> 
+      </div>
+    </div>
+    <div class="before"></div>
+  </div>
+
+
+

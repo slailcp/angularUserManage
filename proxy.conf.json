@@ -1,0 +1,18 @@
+{
+    "/fxapi":{
+        "target":"http://192.161.1.16:5568/fxsystem",
+        "secure":false,
+        "changeOrigin":true,
+        "pathRewrite": {
+            "^/fxapi": ""
+         }
+    },
+    "/oaapi":{
+        "target":"http://192.161.1.16:5562/OASYSTEM",
+        "secure":false,
+        "changeOrigin":true,
+        "pathRewrite": {
+            "^/oaapi": ""
+         }
+    }
+}

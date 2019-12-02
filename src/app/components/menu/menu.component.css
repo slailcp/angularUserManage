@@ -1,0 +1,46 @@
+/* .menu{position: absolute;top:0;left: 0;bottom:0;width:200px;background: #fff;}
+.logo{height: 50px;width:100%;background: #00a0e9;font-size:40px;text-align: center;line-height: 50px;color:#fff;}
+.menu-item:nth-child(1){margin-top:10px;}
+.menu-item{line-height: 34px;padding-left:20px;cursor: pointer;border-bottom: 1px solid #d8d8d8;}
+
+.menu-item a{text-decoration: none;color:#333;}
+
+
+ */
+
+
+
+.v-menu{width:200px;padding-top:46px;display: inline-block;border:1px solid #d8d8d8;position: absolute;
+  top: -1px;
+  bottom: 0;
+  width: 200px;
+  display: block;
+box-shadow: 5px 5px 5px #d8d8d8;background-color: #fff;border-left: 4px solid #ddd;
+  
+
+}
+.before{content:'';position: fixed;
+    top: -1px;
+    bottom: 0;
+    width: 200px;background: #fff;
+    display: block;}
+
+.arrow{position: absolute;right:10px;top:0;}
+.menu-icon{display: inline-block;width: 14px;height:14px;vertical-align: middle;margin-right: 5px;}
+/* .fuxuan{background: url(../assets/icon/fuxuan@2x.png) no-repeat center;background-size: contain;}
+.travel{background: url(../assets/icon/travel.png) no-repeat center;background-size: contain;}
+.visa{background: url(../assets/icon/visa.png) no-repeat center;background-size: contain;}
+.car{background: url(../assets/icon/car.png) no-repeat center;background-size: contain;}
+.report{background: url(../assets/icon/report.png) no-repeat center;background-size: contain;}
+.form{background: url(../assets/icon/form.png) no-repeat center;background-size: contain;} */
+
+
+.parent{height:38px;line-height: 38px;padding-left:10px;border-bottom:1px solid #dedede;cursor: pointer;overflow: hidden;position: relative;}
+.box-wraper{
+  background:#fbfbfb ;
+  box-shadow: inset 0 4px 4px -2px rgba(0,0,0,.15), inset 0 -4px 4px -2px rgba(0,0,0,.15);
+}
+.parent:hover,.parent.active{border-left:4px solid #2ab9dc;margin-left: -4px;}
+.child{height:38px;line-height: 38px;padding-left:30px;cursor: pointer;overflow: hidden;}
+.child:last-child{    box-shadow: inset 0 -4px 4px -2px rgba(0,0,0,.15);}
+.child:hover,.child.active{background-color: #f5f5f5;border-left:4px solid #2ab9dc;margin-left: -4px;}

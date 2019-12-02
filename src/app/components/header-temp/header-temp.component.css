@@ -1,0 +1,21 @@
+.temp{position: absolute;right:0;top:0;}
+
+
+/*:host当前组件，.header-temp-wraper在父组件中调用的时候的class名称*/
+:host(.header-temp-wraper) {
+    display: block;
+    border: 1px solid red;height:50px;
+}
+
+
+/* 应用到当夜组件内所有的字体样式*/
+/* :host{font-size: 30px;}
+:host-context{color: red;} */
+
+/*
+只有当某个祖先元素有 CSS 类 header-top-wraper 时，才会把 background-color 样式应用到组件内部的所有 .header-temp-text 元素中。
+.header-top-wraper 为 父组件上的 class   
+manage.component.html中 <app-header-top class="header-top-wraper"></app-header-top>*/
+:host-context(.header-top-wraper) .header-temp-text {
+    color: red;
+}

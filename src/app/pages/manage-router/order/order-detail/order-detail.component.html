@@ -1,0 +1,10 @@
+<div *ngFor="let user of (user$|async)">
+    <p>详情</p>
+    <div>姓名:{{user.username}}</div>
+    <div>年龄:{{user.age}}岁</div>
+    <div>性别:{{user.sex  | sexTransform:'wl'}}</div>
+    <div>手机号码:{{user.MobilePhone}}</div>
+    <div>喜好:{{user.like}}</div>
+    <div>身份:{{user.identity}}</div>
+</div>
+

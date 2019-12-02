@@ -1,0 +1,20 @@
+<div class="list">
+    <div class="dl" *ngFor="let user of (userList$ | async)">
+            <div class="dt">姓名：{{user.username}}</div>
+            <div class="dd">性别：{{user.sex | sexTransform:'wl'}}</div>
+            <div class="dd">手机号:{{user.MobilePhone}}</div>
+            <button [routerLink]="['/manage/order-detail', user.id]" routerLinkActive="active">查看</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="skipDetail(user)">编辑</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="delUser(user.username,user.id)">删除</button>
+        </div>
+</div>
+
+
+<!-- <div class="list">
+        <div class="dl" *ngFor="let user of (userList$ | async)"
+        [routerLink]="['/manage/order-detail', user.userid]" routerLinkActive="active">
+                <div class="dt">姓名：{{user.username}}</div>
+                <div class="dd">性别：{{user.sex | sexTransform:'wl'}}</div>
+                <div class="dd">手机号:{{user.MobilePhone}}</div>
+            </div>
+    </div> -->
