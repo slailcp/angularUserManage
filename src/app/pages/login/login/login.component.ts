@@ -72,33 +72,9 @@ export class LoginComponent implements OnInit {
         })
     }
 
-    // onSubmitFx() {
-       
-    //     const params = {
-    //         'accountUser':this.username,//- （String） 用户账号
-    //         'accountPwd':this.password ,  //（String） 用户密码
-    //         'rememberMe':true, //（Boolean） 是否记住用户标志
-    //     }
-    //     if (!this.username || !this.password) { 
-    //         // this.router.navigate(['/manage']);
-    //         this.layerService.alert('账号或者密码错误不能为空');
-    //         return;
-    //     }
-    //     const loading = this.layerService.showLoading();
-    //     this.loginService.fxLoginGoTo(params).subscribe(item => {
-    //         console.log(item)
-    //         if (item) {
-    //             this.cacheService.set(this.cacheService.key.loginInfo,item,this.cacheService.key.loginDateRange);
-    //             this.cacheService.set(this.cacheService.key.userInfo,item,this.cacheService.key.loginDateRange);
-    //             this.getInfo(item);
-    //             this.router.navigate(['/manage']);
-    //             this.layerService.hideLoading(loading)
-    //         }
-    //     })
-    // }
 
     getInfo(user) {
         this.store.dispatch(getLoginInfo({payload: user}))
         this.router.navigate(['/manage']);
-      }
+    }
 }

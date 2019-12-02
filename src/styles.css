@@ -6,6 +6,7 @@ body{
     background:url('http://fjoa.fanjiaxing.com/assets/pic/index_bg.jpg') center no-repeat;background-size: 100% 100%;
 }
 /* .mat-autocomplete-panel-sll{} */
+.warn{color:red}
 .sll-auto-component-item{padding-left: 10px;line-height: 28px;border-bottom: 1px solid #d8d8d8;}
 .sll-auto-component-item:hover{background:#2dc3e8 ;color:#fff;cursor: pointer;}
 .ver-mid{vertical-align: middle;}
