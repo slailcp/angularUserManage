@@ -1,5 +1,0 @@
-启动项目：运行命令ng serve
-
-启动接口：
-1.全局安装json-server
-2.运行命令 json-server ./mock/data.json 
