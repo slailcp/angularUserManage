@@ -1,1 +1,14 @@
-
+<div class="alert-wraper-bg">
+  <div class="alert-wraper"  [ngStyle]="dialogStyle">
+    <div style="width:100%">
+      <h1 class="dialog-title">{{title}} <span class="fr c" (click)="close()">×</span> </h1>
+      <div class="content">
+        <ng-content></ng-content>
+      </div>
+      <div style="text-align: center;" *ngIf="btnsShow">
+        <button class="enter" type="button" (click)="enter()">{{btnEnterMessage}}</button>
+        <button class="close" type="button" (click)="close()">{{btnCancelMessage}}</button>
+      </div>
+    </div>
+  </div>
+</div>

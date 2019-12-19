@@ -10,6 +10,7 @@ import { createCustomElement } from '@angular/elements';
 import { ToastComponent } from './components/fj-layers/toast.component';
 import { AlertComponent } from './components/fj-layers/alert.component';
 import { ConfirmComponent } from './components/fj-layers/confirm.component';
+import {DialogComponent} from "./components/dialog/dialog.component";
 
 @Component({
   selector: 'app-root',

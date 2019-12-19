@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { LoginService } from 'src/app/services/login.service';
-import { LayerService } from 'src/app/services/layer.service';
-import { User } from 'src/app/interfacer/user';
-import { UserService } from 'src/app/services/user.service';
+import {Component, OnInit} from '@angular/core';
+import {LoginService} from 'src/app/services/login.service';
+import {LayerService} from 'src/app/services/layer.service';
+import {User} from 'src/app/interfacer/user';
+import {UserService} from 'src/app/services/user.service';
 import {debounceTime, distinctUntilChanged, switchMap, retry} from 'rxjs/operators'
 import {Subject, Observable} from 'rxjs'
+import {OrganizeService} from "../../../services/organize.service";
 
 @Component({
   selector: 'app-index',
@@ -13,12 +14,14 @@ import {Subject, Observable} from 'rxjs'
 })
 export class IndexComponent implements OnInit {
   userInfo: any;
+  dialogShow = false;
+  organizeData = [];
   autoCompleteModel: string = '';
   autoCompleteSub = new Subject();
   filteredUserName$: Observable<any[]>;
 
-  filteredStates:any[] = [];
-  _filteredStates:any[] = [
+  filteredStates: any[] = [];
+  filteredStatesData: any[] = [
     {value: '橙子', key: 1},
     {value: '葡萄', key: 2},
     {value: '芒果', key: 3},
@@ -38,19 +41,57 @@ export class IndexComponent implements OnInit {
     {value: '黑莓', key: 17},
     {value: '草莓', key: 18}
   ];
+
+
   constructor(private loginService: LoginService,
-    private layerService: LayerService,
-    private userService: UserService
-    ) { }
+              private layerService: LayerService,
+              private userService: UserService,
+              private organizeService: OrganizeService
+  ) {
+  }
+
 
   ngOnInit() {
-    this.filteredStates = [...this._filteredStates]
+    this.filteredStates = [...this.filteredStatesData]
 
     this.filteredUserName$ = this.autoCompleteSub.pipe(
       debounceTime(300),
       distinctUntilChanged(),
       switchMap((value: string) => this.userService.getUsers({username: value.trim()}).pipe(retry(3)))
-    )
+    );
+    // console.log(this.tebleTreeCallback)
+    this.getOrganizeData();
+  }
+
+
+  Dialogclose() {
+    this.dialogShow = false;
+  }
+
+  Dialogenter(data) {
+    this.dialogShow = false;
+  }
+
+  showDialogEvent() {
+    this.dialogShow = true;
+    console.log(this.dialogShow);
+  }
+
+  tebleTreeCallback(item) {
+    console.log(item);
+    // const parseId = this.getParentsId(this.organizeData, item.id);
+    // console.log(parseId);
+  }
+
+
+  getOrganizeData() {
+    this.organizeService.getOrganize().subscribe(data => {
+      // setTimeout(() => {
+      this.organizeData = data;
+      // console.log(this.organizeData)
+      // }, 5000);
+
+    });
   }
 
   onToast() {
@@ -58,13 +99,13 @@ export class IndexComponent implements OnInit {
   }
 
   onLoading() {
-   const loading = this.layerService.showLoading();
-   setTimeout(() => {
-    this.layerService.showToast('关闭loading!');
-   },1500)
-   setTimeout(() => {
-    this.layerService.hideLoading(loading);
-   },2000)
+    const loading = this.layerService.showLoading();
+    setTimeout(() => {
+      this.layerService.showToast('关闭loading!');
+    }, 1500)
+    setTimeout(() => {
+      this.layerService.hideLoading(loading);
+    }, 2000)
   }
 
   onAlert() {
@@ -118,16 +159,17 @@ export class IndexComponent implements OnInit {
   }
 
   searchName(value) {
-    this.filteredStates = this._filteredStates.filter(item => item.value.indexOf(value.trim())!==-1);
-  } 
+    this.filteredStates = this.filteredStatesData.filter(item => item.value.indexOf(value.trim()) !== -1);
+  }
 
   searchNameajax(value) {
     this.autoCompleteSub.next(value)
   }
+
   //
   onAutoComplete(ev) {
-     this.autoCompleteModel = ev.target.innerHTML.trim();
-     console.log(ev.target.attributes['key'].value)
+    this.autoCompleteModel = ev.target.innerHTML.trim();
+    console.log(ev.target.attributes['key'].value)
   }
 
 }

@@ -166,5 +166,166 @@
       "codetype": "",
       "codenumber": ""
     }
+  ],
+  "department": [
+    {
+      "id": "0efff468-6b04-4560-e37cff91e8ad",
+      "Name": "饭饭科技",
+      "Level": 0,
+      "ChildNode": [
+        {
+          "id": "ba5e15d2-20be-471b-650800dcc420",
+          "Name": "测试四",
+          "Level": 1,
+          "ChildNode": null,
+          "ParentGuid": "00000000-0000-0000-000000000000",
+          "FullDepartName": "测试四",
+          "ManagerGuid": "a4e4ee76-d998-49ae-9175-114ba762b37c",
+          "ManagerName": "杨文"
+        },
+        {
+          "id": "08b3462e-11d6-444f-61eaf889dd4b",
+          "Name": "测试c",
+          "Level": 1,
+          "ChildNode": null,
+          "ParentGuid": "00000000-0000-0000-000000000000",
+          "FullDepartName": "测试c",
+          "ManagerGuid": null,
+          "ManagerName": ""
+        },
+        {
+          "id": "7eb30939-0ddb-4381-9503a8fbad39",
+          "Name": "测试b",
+          "Level": 1,
+          "ChildNode": null,
+          "ParentGuid": "00000000-0000-0000-000000000000",
+          "FullDepartName": "测试b",
+          "ManagerGuid": null,
+          "ManagerName": ""
+        },
+        {
+          "id": "e2a9e066-93f0-49b8-42f2369a4b5c",
+          "Name": "测试部",
+          "Level": 1,
+          "ChildNode": [
+            {
+              "id": "c41edaef-41cc-442c-f95e9353dfaf",
+              "Name": "部门的师父说过",
+              "Level": 1,
+              "ChildNode": [
+                {
+                  "id": "673c6726-b26d-4d05-8728ab4cfde4",
+                  "Name": "测试二",
+                  "Level": 1,
+                  "ChildNode": null,
+                  "ParentGuid": "c41edaef-41cc-442c-f95e9353dfaf",
+                  "FullDepartName": "测试部-测试一-测试二",
+                  "ManagerGuid": "eb9901b4-88d4-440b-997e31544ef5",
+                  "ManagerName": "杨七"
+                }
+              ],
+              "ParentGuid": "e2a9e066-93f0-49b8-42f2369a4b5c",
+              "FullDepartName": "测试部-部门的师父说过",
+              "ManagerGuid": null,
+              "ManagerName": ""
+            }
+          ],
+          "ParentGuid": "00000000-0000-0000-000000000000",
+          "FullDepartName": "测试部",
+          "ManagerGuid": null,
+          "ManagerName": ""
+        },
+        {
+          "id": "cffdcc05-3f67-46bd-ede90c2efdb1",
+          "Name": "总部门",
+          "Level": 1,
+          "ChildNode": [
+            {
+              "id": "1d31b2ab-ef62-4505-13d20afebdbc",
+              "Name": "部门一",
+              "Level": 1,
+              "ChildNode": [
+                {
+                  "id": "19ae162b-abf7-4aef-c74eacf056ee",
+                  "Name": "部门二",
+                  "Level": 1,
+                  "ChildNode": [
+                    {
+                      "id": "4b3aeec1-e6f4-400a-d39a211d51d5",
+                      "Name": "部门三",
+                      "Level": 1,
+                      "ChildNode": [
+                        {
+                          "id": "e82cb07d-d293-4395-8b7cd6911f94",
+                          "Name": "部门法国",
+                          "Level": 1,
+                          "ChildNode": [
+                            {
+                              "id": "12c6016b-21ca-a73e-ef47b89f5c67",
+                              "Name": "部门五",
+                              "Level": 1,
+                              "ChildNode": [
+                                {
+                                  "id": "abd80c2b-e2b0-9521-7fc37fae359b",
+                                  "Name": "部门六",
+                                  "Level": 1,
+                                  "ChildNode": null,
+                                  "ParentGuid": "12c6016b-46a2-a73e-ef47b89f5c67",
+                                  "FullDepartName": "总部门-部门一-部门二-部门三-部门四-部门五-部门六",
+                                  "ManagerGuid": "1a6cdfa0-2022-466c-afa9-a4bdbd912868",
+                                  "ManagerName": "杨六"
+                                }
+                              ],
+                              "ParentGuid": "e82cb07d-d293-bee2-8b7cd6911f94",
+                              "FullDepartName": "总部门-部门一-部门二-部门三-部门四-部门五",
+                              "ManagerGuid": "256e4847-c7b6-4a15-b908-348768e7dc76",
+                              "ManagerName": "杨五五"
+                            }
+                          ],
+                          "ParentGuid": "4b3aeec1-e6f4-a1d3-d39a211d51d5",
+                          "FullDepartName": "总部门-部门一-部门二-部门三-部门法国",
+                          "ManagerGuid": "a61c99b5-68bd-4a51-b8c5-10fb434ec6bb",
+                          "ManagerName": "杨四"
+                        }
+                      ],
+                      "ParentGuid": "19ae162b-abf7-a52e-c74eacf056ee",
+                      "FullDepartName": "总部门-部门一-部门二-部门三",
+                      "ManagerGuid": null,
+                      "ManagerName": ""
+                    }
+                  ],
+                  "ParentGuid": "1d31b2ab-ef62-94fd-13d20afebdbc",
+                  "FullDepartName": "总部门-部门一-部门二",
+                  "ManagerGuid": null,
+                  "ManagerName": ""
+                }
+              ],
+              "ParentGuid": "cffdcc05-3f67-a0bc-ede90c2efdb1",
+              "FullDepartName": "总部门-部门一",
+              "ManagerGuid": null,
+              "ManagerName": ""
+            }
+          ],
+          "ParentGuid": "00000000-0000-0000-000000000000",
+          "FullDepartName": "总部门",
+          "ManagerGuid": null,
+          "ManagerName": ""
+        },
+        {
+          "id": "00000000-0000-0000-000000000000",
+          "Name": "未分类部门",
+          "Level": 1,
+          "ChildNode": null,
+          "ParentGuid": "0efff468-4560-9bd5-e37cff91e8ad",
+          "FullDepartName": "未分类部门",
+          "ManagerGuid": null,
+          "ManagerName": null
+        }
+      ],
+      "ParentGuid": "00000000-0000-0000-000000000000",
+      "FullDepartName": null,
+      "ManagerGuid": null,
+      "ManagerName": null
+    }
   ]
 }

@@ -8,7 +8,7 @@
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "fj",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -106,6 +106,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
+            "files":["src/app/pages/login/**/*.ts"],
             "exclude": [
               "**/node_modules/**"
             ]

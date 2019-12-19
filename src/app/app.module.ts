@@ -13,7 +13,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 // import { ManageModule } from './pages/manage-router/manage.module';
 // import { PopupComponent } from './components/popup/popup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DialogComponent } from './components/dialog/dialog.component';
+// import { DialogComponent } from './components/dialog/dialog.component';
 import { LoadingComponent } from './components/fj-layers/loading.component';
 import { ToastComponent } from './components/fj-layers/toast.component';
 import { AppStoreModule } from './ngrx/reducers';
@@ -29,7 +29,7 @@ import { AutocompleteComponent } from './components/fj-layers/autocomplete.compo
     RegisterComponent,
     NotFoundComponent,
     // PopupComponent,
-    DialogComponent,
+    // DialogComponent,
     LoadingComponent,
     ToastComponent,
     AlertComponent,

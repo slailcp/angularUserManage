@@ -1,17 +1,21 @@
+<div>组件</div>
 <button class="btn-default" (click)="onToast()">toast</button>&nbsp;&nbsp;&nbsp;&nbsp;
 <button class="btn-default" (click)="onLoading()">loading</button>&nbsp;&nbsp;&nbsp;&nbsp;
 <button class="btn-default" (click)="onAlert()">alert</button>&nbsp;&nbsp;&nbsp;&nbsp;　　
-<button class="btn-default" (click)="onConfirm()">confirm</button>&nbsp;&nbsp;&nbsp;&nbsp;　　<br/><br/><br/><br/>
+<button class="btn-default" (click)="onConfirm()">confirm</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="btn-default" (click)="showDialogEvent()">dialog</button>
 
 
-<span class="ver-mid">autocomplete:</span><input 
+
+<br/><br/><br/><br/>
+<span class="ver-mid">autocomplete:</span><input
     class="text-default"
-    type="text" 
+    type="text"
     placeholder="请输入关键字查询"
-    #searchDepartmentName 
+    #searchDepartmentName
     [value]="autoCompleteModel"
-    (input)="searchName(searchDepartmentName.value)" 
-    [appFjAutocomplete]="'auto'"  
+    (input)="searchName(searchDepartmentName.value)"
+    [appFjAutocomplete]="'auto'"
     #departmentName="app-fj"/>
 <app-autocomplete [Dom]="departmentName"  (itemSelected)="onAutoComplete($event)">
   <div [attr.key]='filter.key'  class="sll-auto-component-item" *ngFor="let filter of filteredStates">
@@ -19,13 +23,13 @@
    </div>
 </app-autocomplete><br/>
 
-<!-- autocomplete:<input 
-    type="text" 
+<!-- autocomplete:<input
+    type="text"
     placeholder="请输入关键字查询"
-    #searchUserName 
+    #searchUserName
     [value]="autoCompleteModel"
-    (input)="searchNameajax(searchUserName.value)" 
-    [appFjAutocomplete]="'auto'"  
+    (input)="searchNameajax(searchUserName.value)"
+    [appFjAutocomplete]="'auto'"
     #userName="app-fj"/>
 <app-autocomplete [Dom]="userName" (itemSelected)="onAutoComplete($event)">
   <div *ngIf="!filteredUserName$">loading...</div>
@@ -36,6 +40,24 @@
   </div>
 </app-autocomplete> -->
 
+<div style="margin-top: 100px;">树</div>
 
+
+
+<!--dialog-->
+<div *ngIf="dialogShow">
+  <app-dialog
+    title="dialog"
+    width="600"
+    btnCancelMessage="取消"
+    btnEnterMessage="确定"
+    (closed)="Dialogclose($event)"
+    (entered)="Dialogenter($event)"
+  >
+    <div>
+      dialogdialogdialogdialogdialog
+    </div>
+  </app-dialog>
+</div>
 
 
