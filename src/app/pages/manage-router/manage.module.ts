@@ -27,6 +27,7 @@ import {FjAutocompleteDirective} from 'src/app/directives/fj-autocomplete.direct
 import {AutocompleteComponent} from 'src/app/components/fj-layers/autocomplete.component';
 import {SexPipe} from 'src/app/pipes/sex.pipe';
 import {DialogComponent} from "../../components/dialog/dialog.component";
+import { NgrxComponent } from './methods/ngrx/ngrx.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import {DialogComponent} from "../../components/dialog/dialog.component";
     OrderDetailComponent,
     IndexComponent,
     StaffDataSetComponent,
-    AutocompleteComponent
+    AutocompleteComponent,
+    NgrxComponent
   ],
   imports: [
     CommonModule,

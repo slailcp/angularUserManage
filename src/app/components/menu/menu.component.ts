@@ -32,7 +32,12 @@ export class MenuComponent {
       name: '设置', icon: 'fuxuan', show: true, childIsShow: false, child: [
       {name: '员工资料设置', link: '/manage/staff-set', show: true}
       ]
-    }
+    },
+    {
+      name: 'angular方法列表', icon: 'fuxuan', show: true, childIsShow: false, child: [
+      {name: 'ngrx', link: '/manage/ngrx', show: true}
+      ]
+    },
   ];
 
   showChildMenu(index) {

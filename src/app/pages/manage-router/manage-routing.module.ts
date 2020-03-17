@@ -13,6 +13,7 @@ import { OrderDetailComponent } from './order/order-detail/order-detail.componen
 import { OrderEnterComponent } from './order/order-enter/order-enter.component';
 import { IndexComponent } from './index/index.component';
 import { StaffDataSetComponent } from './setting/staff-data-set/staff-data-set.component';
+import { NgrxComponent } from './methods/ngrx/ngrx.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
           { path: 'order-detail/:id', component: OrderDetailComponent},
           { path: 'order-enter', component: OrderEnterComponent},
           { path: 'staff-set', component: StaffDataSetComponent},
+          { path: 'ngrx', component: NgrxComponent},
           // { path: 'name-editor', component: NameEditorComponent },
           // { path: 'product-list', component: ProductListComponent },
           // { path: 'product-list/:id', component: ProductDetailComponent },
